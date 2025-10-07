@@ -43,7 +43,7 @@ Make sure you're running **Statamic 5.x** for compatibility.
 ### Installing into an existing site
 
 ```bash
-php please starter-kit:install webbycrown/yummy-food-restaurant-statamic-theme
+php please starter-kit:install webbycrown/yummy-restaurants-statamic-theme
 ```
 
 ### Installing via the Statamic CLI Tool
@@ -51,5 +51,5 @@ php please starter-kit:install webbycrown/yummy-food-restaurant-statamic-theme
 If you have the [Statamic CLI Tool](https://github.com/statamic/cli) installed, create a new Statamic installation with Yummy Food Restaurant in one command:
 
 ```bash
-statamic new my-site webbycrown/yummy-food-restaurant-statamic-theme
+statamic new my-site webbycrown/yummy-restaurants-statamic-theme
 ```

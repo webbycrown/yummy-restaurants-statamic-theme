@@ -1,9 +1,9 @@
 {
-    "name": "webbycrown/yummy-food-restaurant-statamic-theme",
+    "name": "webbycrown/yummy-restaurants-statamic-theme",
     "extra": {
         "statamic": {
-            "name": "Yummy Food Restaurant Statamic Theme",
-            "description": "A Yummy food restaurant starter kit for information sites."
+            "name": "Yummy Restaurants Statamic Theme",
+            "description": "A Yummy restaurants starter kit for information sites."
         }
     }
 }
