@@ -1,0 +1,67 @@
+<section class="portfolio-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="portfolio-title-text text-center">
+                <h5 class="sub-title">{{ sub_title }}</h5>
+                <h2>{{ section_title }}</h2>
+                <div class="text-shape">
+                  <svg width="93px" height="1px">
+                    <path fill-rule="evenodd" fill="rgb(193, 153, 119)"
+                      d="M-0.000,0.999 L-0.000,-0.000 L128.000,-0.000 L128.000,0.999 L-0.000,0.999 Z" />
+                  </svg>
+                  <svg width="25.5px" height="25.5px">
+                    <path fill-rule="evenodd" fill="rgb(193, 153, 119)"
+                      d="M5.506,12.383 L12.615,5.493 L19.506,12.601 L12.397,19.492 L5.506,12.383 Z" />
+                    <path fill-rule="evenodd" stroke="rgb(193, 153, 119)" stroke-width="1px" stroke-linecap="butt"
+                      stroke-linejoin="miter" fill="none"
+                      d="M0.511,12.301 L12.697,0.488 L24.511,12.674 L12.324,24.487 L0.511,12.301 Z" />
+                  </svg>
+                  <svg width="93px" height="1px">
+                    <path fill-rule="evenodd" fill="rgb(193, 153, 119)"
+                      d="M-0.000,0.999 L-0.000,-0.000 L128.000,-0.000 L128.000,0.999 L-0.000,0.999 Z" />
+                  </svg>
+                </div>
+              </div>
+              <div class="portfolio-click-box">
+                <ul class="slider-click-box button-group filter-button-group text-center">
+                  <li class="tab-link"><a href="javascript:;" class="portfolio-click active" data-filter="*">All</a>
+                  </li>
+                  {{ taxonomy:portfolio_category sort="title" }}
+                  <li class="tab-link">
+                    <a href="javascript:;" class="portfolio-click" data-filter=".{{ slug }}">{{ title }}</a>
+                  </li>
+                  {{ /taxonomy:portfolio_category }}
+                </ul>
+              </div>
+              <div class="row portfolio-images-section grid">
+                {{ if collections == "portfolios" }}
+                {{ collection:portfolios as="portfolios" }}
+
+                {{ /if }}
+                {{ portfolios }}
+                <div class="col-12 col-md-4 p-0 element-item {{ category}} {{ slug }} {{ /category }}">
+                  <div class="portfolio-img">
+                    {{ image }}<img src="{{ url }}" alt="" class="object-cover">{{ /image }}
+                    <div class="protfolio-link">
+                      <h5>{{ category}}{{ title }}{{ if not last }} <span><svg width="10px" height="9px">
+                        <path fill-rule="evenodd" fill="rgb(193, 153, 119)"
+                        d="M4.792,0.190 L9.031,4.437 L4.785,8.676 L0.546,4.430 L4.792,0.190 Z" />
+                      </svg> </span>{{ /if }} {{ /category }}</h5>
+                      <h4><a href="/portfolio"> {{ title }}</a></h4>
+                      <a href="/portfolio">
+                        {{ icon }}<img x="0px" y="0px" width="24px" height="18px" href="{{ url }}" class="object-cover"> {{ /icon }}
+
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                {{ /portfolios }}
+                {{ if collections == "portfolios" }}
+                {{ /collection:portfolios }}
+                {{ /if }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

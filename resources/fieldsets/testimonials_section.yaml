@@ -1,0 +1,31 @@
+title: 'Testimonials Section'
+fields:
+  -
+    handle: testimonials
+    field:
+      type: replicator
+      display: Testimonials
+      sets:
+        testimonial_item:
+          display: Testimonial
+          fields:
+            -
+              handle: name
+              field:
+                type: text
+                display: Name
+            -
+              handle: position
+              field:
+                type: text
+                display: 'Position / Title'
+            -
+              handle: message
+              field:
+                type: textarea
+                display: 'Testimonial Message'
+            -
+              handle: link
+              field:
+                type: text
+                display: 'Link (optional)'

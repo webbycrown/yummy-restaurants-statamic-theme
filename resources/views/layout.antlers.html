@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+
+{{ partial:header-link }}
+<body style="background:#0b1214;">
+
+    <div class="perspective">
+
+        <!-- start-side-menu -->
+        {{ partial:header }}
+
+            <!-- end-header -->
+
+            {{ template_content }}
+           
+            <!-- start footer -->
+            {{ if response_code != 404 }}
+            
+{{ if segment_1 == "about" }}
+    {{  extra_class = "about-page-book-table" }}
+{{ else }}
+    {{  extra_class = "" }}
+{{ /if }}
+            <!-- start book-table section -->
+            <section class="book-table-section {{ extra_class }}">
+                <div class="container">
+                    <div class="book-table">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="book-table-title-text text-center">
+                                    {{ setting }}
+                                    <h5 class="sub-title">{{ table_sub_title }}</h5>
+                                    <h2>{{ table_title }}</h2>
+                                    {{ \setting }}
+                                </div>
+                                
+                                {{ form:book_a_table id="book-table-form" ajax="true" enctype="multipart/form-data" }}
+                                {{ csrf }}
+                                <div class="select-table">
+                                    {{ fields }}
+                                    <div class="{{ handle == 'name' ? 'name-box' : (handle == 'persons' ? 'Person-box' : (handle == 'book_date' ? 'date-box' : (handle == 'time' ? 'time-box' : handle ) ) ) }}">
+                                        <div class="input-group">
+                                            {{ if type == "textarea" }}
+                                            <textarea class="form-control" name="{{ handle }}" placeholder="{{ display }}"></textarea>
+                                            {{ elseif type == "select" }}
+                                            <select class="form-select" name="{{ handle }}">
+                                                {{ options }}
+                                                <option value="{{ value }}">{{ value }}</option>
+                                                {{ /options }}
+                                            </select>
+                                            {{ else }}
+                                            <input type="{{ type }}" id="{{ handle == 'time' ? 'timepickers' : (handle == 'book_date' ? 'datepickers':handle) }}" class="form-control" name="{{ handle }}" placeholder="{{ display }}">
+                                            {{ /if }}
+                                        </div>
+                                        <div class="field-error text-danger" data-error-for="{{ handle }}">{{ error }}</div>
+                                    </div>
+                                    {{ /fields }}
+                                </div>
+                                <div class="book-botton text-center mt-3">
+                                    <button type="submit" class="btn btn-primary">{{ setting }} {{ booking_button }} {{ /setting }}  </button>
+                                </div>
+
+                                <div id="form-response" class="mt-2"></div>
+
+                                {{ /form:book_a_table }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {{ /if }}
+            <!-- end book-table section -->
+            
+            {{ partial:footer }}
+            <!--end footer-->
+
+            <!-- start menu-item popup-with-form-section -->
+            <section class="menu-item mfp-hide" id="test-menu-cart">
+                
+                {{ if {partial:menu-item} }}
+                {{ partial:menu-item }}
+                {{ else }}
+                <div class="default-content">
+                   
+                </div>
+              {{ /if }}
+             
+            </section>
+            <!-- end menu-item popup-with-form-section -->
+
+        </div>
+
+    </div>
+    {{ partial:footer-link }}
+    
+</body>
+
+</html>

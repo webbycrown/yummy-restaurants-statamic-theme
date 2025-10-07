@@ -1,0 +1,20 @@
+title: 'Welcome Section'
+fields:
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: collections
+    field:
+      mode: select
+      type: collections
+      display: Collections
+      max_items: 1
+            

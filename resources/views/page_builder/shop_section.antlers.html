@@ -1,0 +1,132 @@
+<section class="shop-items-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="shop-title-text text-center">
+                    <h5 class="sub-title">{{ sub_title }}</h5>
+                    <h2>{{ section_title }}</h2>
+                    <div class="text-shape">
+                        <svg width="93px" height="1px">
+                            <path fill-rule="evenodd" fill="rgb(193, 153, 119)"
+                            d="M-0.000,0.999 L-0.000,-0.000 L128.000,-0.000 L128.000,0.999 L-0.000,0.999 Z" />
+                        </svg>
+                        <svg width="25.5px" height="25.5px">
+                            <path fill-rule="evenodd" fill="rgb(193, 153, 119)"
+                            d="M5.506,12.383 L12.615,5.493 L19.506,12.601 L12.397,19.492 L5.506,12.383 Z" />
+                            <path fill-rule="evenodd" stroke="rgb(193, 153, 119)" stroke-width="1px"
+                            stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+                            d="M0.511,12.301 L12.697,0.488 L24.511,12.674 L12.324,24.487 L0.511,12.301 Z" />
+                        </svg>
+                        <svg width="93px" height="1px">
+                            <path fill-rule="evenodd" fill="rgb(193, 153, 119)"
+                            d="M-0.000,0.999 L-0.000,-0.000 L128.000,-0.000 L128.000,0.999 L-0.000,0.999 Z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            {{ if collections == "products" }}
+            {{ collection:products paginate="true" limit="{pagination}" as="products" }}
+            {{ products }}
+            <div class="col-12 col-md-4" data-aos="fade-down" data-aos-duration="1000">
+                <div class="shop-items-main-box">
+                    <div class="shop-items-box">
+                        <div class="shop-items-img-border">
+                            <div class="shop-items-img">
+                                {{ image }}
+                                <img src="{{ url }}" alt="">
+                                {{ /image }}
+                            </div>
+                            <div class="cart-main-box">
+                                <div class="cart-box">
+                                   <button class="add-to-cart" 
+                                   data-id="{{ id }}" 
+                                   data-title="{{ title }}" 
+                                   data-price="{{ price }}" 
+                                   data-image="{{ image:url }}">
+                                   <img src="/assets/images/cart-icon.png" alt="">
+                               </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-items-text text-center">
+                            <h3><a href="{{ link }}">{{ rating }}{{ title }}</a></h3>
+                            <div class="star" data-rating="{{ rating }}">>
+                        
+                           
+                            </div>
+                            <h4>{{ price }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ /products }}
+            <div class="col-12">
+                <div class="next-botton-box">
+                    {{ paginate }}
+                    <!-- Previous Button -->
+                    <div>
+                        {{ if prev_page }}
+                        <a class="prev-botton next-botton" href="{{ prev_page }}">
+                            <img src="/assets/images/shop-page-next-arrow.png" alt="">
+                        </a>
+                        {{ else }}
+                        <a class="prev-botton next-botton disabled" href="javascript:;">
+                            <img src="/assets/images/shop-page-next-arrow.png" alt="">
+                        </a>
+                        {{ /if }}
+                    </div>
+                    <ul>
+                        {{ links:segments }}
+                        {{ first }}
+                        {{ if page == current_page }}
+                        <li class="active"><a href="javascript:;">{{ page }}</a></li>
+                        {{ else }}
+                        <li><a href="{{ url }}">{{ page }}</a></li>
+                        {{ /if }}
+                        {{ /first }}
+
+                        {{ if slider }}
+                        <li><span>...</span></li>
+                        {{ /if }}
+
+                        {{ slider }}
+                        {{ if page == current_page }}
+                        <li class="active"><a href="javascript:;">{{ page }}</a></li>
+                        {{ else }}
+                        <li><a href="{{ url }}">{{ page }}</a></li>
+                        {{ /if }}
+                        {{ /slider }}
+
+                        {{ if slider || (!slider && last) }}
+                        <li><span>...</span></li>
+                        {{ /if }}
+
+                        {{ last }}
+                        {{ if page == current_page }}
+                        <li class="active"><a href="javascript:;">{{ page }}</a></li>
+                        {{ else }}
+                        <li><a href="{{ url }}">{{ page }}</a></li>
+                        {{ /if }}
+                        {{ /last }}
+                        {{ /links:segments }}
+                    </ul>
+                    <!-- Next Button -->
+                    <div>
+                        {{ if next_page }}
+                        <a class="next-botton" href="{{ next_page }}">
+                            <img src="/assets/images/shop-page-next-arrow.png" alt="">
+                        </a>
+                        {{ else }}
+                        <a class="next-botton disabled" href="javascript:;">
+                            <img src="/assets/images/shop-page-next-arrow.png" alt="">
+                        </a>
+                        {{ /if }}
+                    </div>
+                    {{ /paginate }}
+                </div>
+            </div>
+            {{ /collection:products }}
+            {{ /if }}
+        </div>
+    </div>
+</section>

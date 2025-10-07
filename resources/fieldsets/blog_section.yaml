@@ -1,0 +1,19 @@
+title: 'Blog Section'
+fields:
+  -
+    handle: sub_title
+    field:
+      type: text
+      display: 'Sub Title'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: collections
+    field:
+      mode: select
+      type: collections
+      display: Collections
+      max_items: 1

@@ -1,0 +1,45 @@
+title: Setting
+data:
+  logo: images/logo-images.png
+  favicon: images/favicon.png
+  instagram_text: Instagram
+  instagram_posts:
+    -
+      id: mfzdigqy
+      image: images/instagram-one.png
+      url: 'javascript:;'
+      type: new_set
+      enabled: true
+    -
+      id: mfzdixq9
+      image: images/instagram-two.png
+      url: 'javascript:;'
+      type: new_set
+      enabled: true
+    -
+      id: mfzdj3a8
+      image: images/instagram-three.png
+      url: 'javascript:;'
+      type: new_set
+      enabled: true
+    -
+      id: mfzdj9pl
+      image: images/instagram-four.png
+      url: 'javascript:;'
+      type: new_set
+      enabled: true
+    -
+      id: mfzdjgn4
+      image: images/instagram-five.png
+      url: 'javascript:;'
+      type: new_set
+      enabled: true
+    -
+      id: mfzdjn21
+      image: images/instagram-six.png
+      url: 'javascript:;'
+      type: new_set
+      enabled: true
+  table_sub_title: Reservations
+  table_title: 'BOOK A TABLE'
+  booking_button: 'Book Now'

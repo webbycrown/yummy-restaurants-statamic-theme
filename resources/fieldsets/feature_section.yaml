@@ -1,0 +1,57 @@
+title: 'Feature Section'
+fields:
+  -
+    handle: features
+    field:
+      type: replicator
+      display: Features
+      sets:
+        feature_item:
+          display: Feature
+          fields:
+            -
+              handle: title
+              field:
+                type: text
+                display: Title
+            -
+              handle: description
+              field:
+                type: textarea
+                display: Description
+            -
+              handle: image
+              field:
+                type: assets
+                container: assets
+                max_files: 1
+                display: 'Feature Image'
+            -
+              handle: link_url
+              field:
+                type: text
+                display: 'Link URL'
+            -
+              handle: link_text
+              field:
+                type: text
+                display: 'Link Text'
+  -
+    handle: video_popup
+    field:
+      type: grid
+      display: 'Video Popup'
+      max_rows: 1
+      fields:
+        -
+          handle: background_image
+          field:
+            type: assets
+            container: assets
+            max_files: 1
+            display: 'Background Image'
+        -
+          handle: video_url
+          field:
+            type: text
+            display: 'Video URL'

@@ -1,0 +1,48 @@
+title: Portfolio
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Title
+          -
+            handle: image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Image
+          -
+            handle: icon
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: 'Icon Image'
+          -
+            handle: category
+            field:
+              mode: select
+              taxonomies:
+                - portfolio_category
+              type: terms
+              display: Category
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

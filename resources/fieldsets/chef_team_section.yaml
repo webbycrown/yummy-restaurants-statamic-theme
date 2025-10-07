@@ -1,0 +1,31 @@
+title: 'Chef Team Section'
+fields:
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: section_subtitle
+    field:
+      type: text
+      display: 'Section Subtitle'
+  -
+    handle: collections
+    field:
+      max_items: 1
+      mode: select
+      type: collections
+      display: Collections
+  -
+    handle: button_text
+    field:
+      default: 'Discover More'
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_url
+    field:
+      default: /chef
+      type: text
+      display: 'Button URL'

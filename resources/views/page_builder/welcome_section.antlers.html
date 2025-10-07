@@ -1,0 +1,51 @@
+ <section class="welcome-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="welcome-text text-center">
+                    <h5 class="sub-title">{{ subtitle }}s</h5>
+                    <h2>{{ title }}</h2>
+                    <div class="text-shape">
+                        <svg width="128px" height="1px">
+                            <path fill-rule="evenodd" fill="rgb(193, 153, 119)"d="M-0.000,0.999 L-0.000,-0.000 L128.000,-0.000 L128.000,0.999 L-0.000,0.999 Z" />
+                        </svg>
+                        <svg width="25.5px" height="25.5px">
+                            <path fill-rule="evenodd" fill="rgb(193, 153, 119)" d="M5.506,12.383 L12.615,5.493 L19.506,12.601 L12.397,19.492 L5.506,12.383 Z" /><path fill-rule="evenodd" stroke="rgb(193, 153, 119)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"d="M0.511,12.301 L12.697,0.488 L24.511,12.674 L12.324,24.487 L0.511,12.301 Z" />
+                        </svg>
+                        <svg width="128px" height="1px"><path fill-rule="evenodd" fill="rgb(193, 153, 119)"d="M-0.000,0.999 L-0.000,-0.000 L128.000,-0.000 L128.000,0.999 L-0.000,0.999 Z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="welcome-slider">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                {{ if collections == "portfolios" }}
+                {{ collection:portfolios as="portfolios" limit="3" }}
+
+                {{ /if }}
+                {{ portfolios }}
+                <div class="swiper-slide">
+                    <div class="welcome-slider-images-box">
+                     {{ image }}<img src="{{ url }}" alt="" class="object-cover">{{ /image }}
+                     <div class="welcome-slider-box-text">
+                        <h3><a href="/portfolio">{{ title }}</a></h3>
+                        <small>
+                            {{ category}}{{ title }}{{ if not last }} 
+                            <svg width="8px" height="8px"><path fill-rule="evenodd" fill="rgb(193, 153, 119)" d="M0.442,3.975 L3.954,0.416 L7.513,3.928 L4.001,7.487 L0.442,3.975 Z" /></svg> 
+                                {{ /if }} {{ /category }}
+                            </small>
+                    </div>
+                </div>
+            </div>
+            {{ /portfolios }}
+            {{ if collections == "portfolios" }}
+            {{ /collection:portfolios }}
+            {{ /if }}
+        </div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+</div>
+</section>

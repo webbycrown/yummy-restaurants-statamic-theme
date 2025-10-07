@@ -1,0 +1,37 @@
+title: Menu
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Title
+          -
+            handle: image
+            field:
+              container: assets
+              type: assets
+              display: Image
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Description
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

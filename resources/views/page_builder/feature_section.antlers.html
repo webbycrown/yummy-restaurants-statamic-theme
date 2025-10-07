@@ -1,0 +1,36 @@
+<section class="feature-section">
+  <div class="container">
+    <div class="row">
+      {{ features }}
+      <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="feature-box text-center">
+          <div class="feature-shape">
+            {{ image }}<img src="{{ url }}" alt="">{{ /image }}
+          </div>
+          <h4><a href="{{ link_url }}">{{ title }}</a></h4>
+          <p>{{ description }}</p>
+          <h6>
+            <span>
+              <svg width="7px" height="7px">
+                <path fill-rule="evenodd" fill="rgb(193, 153, 119)" d="M3.490,6.998 L-0.009,3.498 L3.490,-0.002 L6.991,3.498 L3.490,6.998 Z"/></svg>
+              </span>
+              {{ if link_text }}<a href="{{ link_url }}">{{ link_text }}</a>{{ /if }}
+              <span><svg width="7px" height="7px"><path fill-rule="evenodd" fill="rgb(193, 153, 119)"d="M3.490,6.998 L-0.009,3.498 L3.490,-0.002 L6.991,3.498 L3.490,6.998 Z" /></svg>
+              </span>
+            </h6>
+          </div>
+        </div>
+        {{ /features }}
+      </div>
+    </div>
+  </section>
+  
+{{ video_popup }}
+<div class="video-popup">
+  <div class="parallax-video-popup-images" data-parallax="scroll" data-image-src="{{ background_image }}{{ url }}{{ /background_image }}">
+    <div class="video-show-botton">
+      <a class="popup-youtube show-video" href="{{ video_url }}"><i class="fas fa-play"></i></a>
+    </div>
+  </div>
+</div>
+{{ /video_popup }}

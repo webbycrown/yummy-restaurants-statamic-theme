@@ -1,0 +1,49 @@
+title: Sidebar
+data:
+  find_us_title: 'find us'
+  address: '52, Lorem Ipsum, NY'
+  map_url: 'https://www.google.com/maps/place/487+8th+Ave,+New+York,+NY+10001,+USA/@40.7528395,-73.995819,17z/data=!3m1!4b1!4m6!3m5!1s0x89c259adc1afce95:0x7b5d1d6a13472f6f!8m2!3d40.7528355!4d-73.9932441!16s%2Fg%2F11fk2p4skw?entry=ttu'
+  phone_numbers:
+    -
+      id: mfz556ba
+      number: '+123 344 056'
+      tel_link: 'tel:+123344056'
+      type: phone_number
+      enabled: true
+    -
+      id: mfz59mpk
+      number: '+123 344 056'
+      tel_link: 'tel:+123344056'
+      type: phone_number
+      enabled: true
+  contact_us_title: 'contact us'
+  emails:
+    -
+      id: mfz5535e
+      email_address: reservations@example.com
+      mailto_link: 'mailto:reservations@example.com'
+      type: email
+      enabled: true
+  opening_hours_title: 'opening hours'
+  opening_hours: |-
+    Tuesday - Thursday 4pm - 11pm <br>
+    Friday & Saturday 12pm till late
+  social_links:
+    -
+      id: mfz55qn2
+      platform: Facebook
+      url: 'https://www.facebook.com'
+      type: social
+      enabled: true
+    -
+      id: mfz5e3oo
+      platform: Pinterest
+      url: 'https://pinterest.com'
+      type: social
+      enabled: true
+    -
+      id: mfz5ednk
+      platform: Instagram
+      url: 'https://www.instagram.com'
+      type: social
+      enabled: true

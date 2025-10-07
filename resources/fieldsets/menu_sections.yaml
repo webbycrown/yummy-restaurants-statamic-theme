@@ -1,0 +1,59 @@
+title: 'Menu Sections'
+fields:
+  -
+    handle: menu_section
+    field:
+      type: replicator
+      display: 'Menu Section'
+      collapse: true
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: section
+                  field:
+                    type: grid
+                    display: Section
+                    listable: true
+                    fields:
+                      -
+                        handle: section_title
+                        field:
+                          type: text
+                          display: 'Section Title'
+                      -
+                        handle: section_subtitle
+                        field:
+                          type: text
+                          display: 'Section Subtitle'
+                      -
+                        handle: menu_items
+                        field:
+                          type: replicator
+                          display: 'Menu Items'
+                          sets:
+                            new_set_group:
+                              display: 'New Set Group'
+                              sets:
+                                new_set:
+                                  display: 'New Set'
+                                  fields:
+                                    -
+                                      handle: products
+                                      field:
+                                        mode: select
+                                        collections:
+                                          - products
+                                        type: entries
+                                        display: Products
+                      -
+                        handle: image
+                        field:
+                          max_files: 1
+                          container: assets
+                          type: assets
+                          display: Image

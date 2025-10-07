@@ -1,0 +1,33 @@
+title: 'Slider Section'
+fields:
+  -
+    handle: hero_section
+    field:
+      type: replicator
+      display: 'Hero Slides'
+      sets:
+        hero_slide:
+          display: Slide
+          fields:
+            -
+              handle: background_image
+              field:
+                type: assets
+                container: assets
+                max_files: 1
+                display: 'Background Image'
+            -
+              handle: subtitle
+              field:
+                type: text
+                display: Subtitle
+            -
+              handle: title
+              field:
+                type: text
+                display: Title
+            -
+              handle: description
+              field:
+                type: textarea
+                display: Description

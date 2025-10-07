@@ -1,0 +1,70 @@
+   <section class="get-in-touch-section">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-12 col-md-6 p-0" data-aos="fade-right" data-aos-duration="1000">
+              <div class="get-contact-img">
+                {{ image }}<img src="{{ url }}" alt="">{{ /image }}
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="det-contact-text">
+                <div class="about-text">
+                  <h5 class="sub-title">{{ sub_title }}</h5>
+                  <h2>{{ section_title }}</h2>
+                  <div class="text-shape">
+                    <svg width="25.5px" height="25.5px">
+                      <path fill-rule="evenodd" fill="rgb(193, 153, 119)"
+                        d="M5.506,12.383 L12.615,5.493 L19.506,12.601 L12.397,19.492 L5.506,12.383 Z" />
+                      <path fill-rule="evenodd" stroke="rgb(193, 153, 119)" stroke-width="1px" stroke-linecap="butt"
+                        stroke-linejoin="miter" fill="none"
+                        d="M0.511,12.301 L12.697,0.488 L24.511,12.674 L12.324,24.487 L0.511,12.301 Z" />
+                    </svg>
+                    <svg width="128px" height="1px">
+                      <path fill-rule="evenodd" fill="rgb(193, 153, 119)"
+                        d="M-0.000,0.999 L-0.000,-0.000 L128.000,-0.000 L128.000,0.999 L-0.000,0.999 Z" />
+                    </svg>
+                  </div>
+                  <p>{{ description }}</p>
+                  {{ form:contact_form id="contact-form" enctype="multipart/form-data" ajax="true" }}
+                  {{ csrf }}
+                  {{ fields }}
+                  <div class="{{ handle == 'message' ? 'text-box' : handle }}">
+                    <div class="input-group">
+                      {{ if type == "textarea" }}
+                      <textarea class="form-control" name="{{ handle }}" placeholder="{{ display }}"></textarea>
+                      {{ else }}
+                      <input type="{{ type }}" class="form-control" name="{{ handle }}" placeholder="{{ display }}">
+                      {{ /if }}
+                    </div>
+                    <div class="field-error text-danger" data-error-for="{{ handle }}">{{ error }}</div>
+                  </div>
+
+                  {{ /fields }}
+                  
+                  <div class="submit-botton book-botton">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                  <div id="form-response" class="mt-2"></div>
+                  {{ /form:contact_form }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end get-in-touch section -->
+
+      <!-- start reastaurant-map section -->
+      <div class="reastaurant-map-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12" data-aos="zoom-in" data-aos-duration="1000">
+              <div class="contact-page-map">
+                <iframe
+                  src="{{ map_embed }}"
+                  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

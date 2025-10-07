@@ -1,0 +1,20 @@
+<head>
+    <meta charset="utf-8">
+    <title>{{ title ?? site:name }}</title>
+   {{ setting }} <link rel="icon" href="{{ favicon }} {{ url }} {{ /favicon }}" type="image/gif">{{ /setting }}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ theme:asset src='assets/css/font-awesome-all.css'}}">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ theme:asset src='assets/css/bootstrap.min.css'}}?v={{ now format="YmdHis" }}">
+    <link rel="stylesheet" type="text/css" href="{{ theme:asset src='assets/css/swiper-bundle.min.css'}}?v={{ now format="YmdHis" }}">
+    <link rel="stylesheet" type="text/css" href="{{ theme:asset src='assets/css/aos.css'}}?v={{ now format="YmdHis" }}">
+    <link rel="stylesheet" type="text/css" href="{{ theme:asset src='assets/css/magnific-popup.css'}}?v={{ now format="YmdHis" }}">
+    <link rel="stylesheet" type="text/css" href="{{ theme:asset src='assets/css/jquery.timepicker.css'}}?v={{ now format="YmdHis" }}">
+    <link rel="stylesheet" type="text/css" href="{{ theme:asset src='assets/css/jquery-ui.css'}}?v={{ now format="YmdHis" }}">
+    <link rel="stylesheet" type="text/css" href="{{ theme:asset src='assets/css/style.css'}}?v={{ now format="YmdHis" }}">
+    {{ vite src="resources/js/site.js|resources/css/site.css" }}
+</head>
+

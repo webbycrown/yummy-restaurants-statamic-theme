@@ -1,0 +1,26 @@
+title: Yummy Food Restaurant Theme
+user: webbycrown
+repo: webbycrown/yummy-food-restaurant-statamic-theme
+export_paths:
+  - routes
+  - content
+  - app/Http
+  - content/assets
+  - content/collections
+  - content/globals
+  - content/navigation
+  - content/taxonomies
+  - content/trees
+  - resources/blueprints
+  - resources/forms
+  - resources/fieldsets
+  - resources/users
+  - resources/views
+  - resources/css
+  - resources/js
+  - public/assets
+  - public/build
+  - storage/forms
+  - package.json
+  - vite.config.js
+  - README.md

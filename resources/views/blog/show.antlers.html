@@ -1,0 +1,111 @@
+ <div class="wc-breadcrumb">
+ 	<div class="wc-breadcrumb-content">
+ 		<div class="container">
+ 			<div class="row">
+ 				<div class="col-12">
+ 					<div class="breadcrumb-item">
+ 						<a href="/">Home</a>
+ 						<i class="fa fa-angle-right"></i>
+ 						<span>Blog details</span>
+ 					</div>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>
+ {{ collection:blogs where="slug:{segment_2}" }}
+ <section class="single-blog-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="single-blog">
+                    <div class="blog-detail-inner">
+                        <div class="blog-image">
+                            <a href=""> {{ image }}<img src="{{ url }}" alt="">{{ /image }}</a>
+
+                        </div>
+                        <div class="blog-info">
+                            <a href="#">{{ published_date format="F j, Y" }}</a>
+                            <a href="#" rel="tag"> {{ tag }}{{ title }}{{ /tag }}</a>
+                        </div>
+                        <h2><a href="#">{{ title }}</a></h2>
+                        {{ description }}
+                        {{ if button_text }} <a href="{{ button_url }}/{{ slug }}" class="read-more">{{ button_text }}</a>{{ /if }}
+                    </div>
+                    <div class="blog-quote">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0"
+                        viewBox="0 0 512 512" style="enable-background:new 0 0 512 512"
+                        xml:space="preserve" class="">
+                        <g>
+                            <path
+                            d="M221 93.5H81c-11.028 0-20 8.972-20 20v130c0 11.028 8.972 20 20 20h82.865c-9.372 45.993-50.458 80-97.865 80a5 5 0 0 0-5 5v65a5 5 0 0 0 5 5c96.495 0 175-78.505 175-175v-130c0-11.028-8.972-20-20-20zm10 150c0 89.31-71.321 162.274-160 164.926v-55.039a109.657 109.657 0 0 0 67.293-27.052c19.792-17.335 32.74-41.174 36.461-67.125a4.997 4.997 0 0 0-4.949-5.71H81c-5.514 0-10-4.486-10-10v-130c0-5.514 4.486-10 10-10h140c5.514 0 10 4.486 10 10zm200-150H291c-11.028 0-20 8.972-20 20v130c0 11.028 8.972 20 20 20h82.869c-9.372 45.993-50.459 80-97.869 80a5 5 0 0 0-5 5v65a5 5 0 0 0 5 5c96.495 0 175-78.505 175-175v-130c0-11.028-8.971-20-20-20zm10 150c0 89.31-71.321 162.274-160 164.926v-55.039a109.66 109.66 0 0 0 67.295-27.052c19.793-17.335 32.742-41.174 36.463-67.125a5 5 0 0 0-4.949-5.71H291c-5.514 0-10-4.486-10-10v-130c0-5.514 4.486-10 10-10h140c5.514 0 10 4.486 10 10z"
+                            fill="#fff" opacity="1" data-original="#000000" class=""></path>
+                        </g>
+                    </svg>
+                    <h5>{{ quote }}
+                    </h5>
+                    <span>{{ quote_author }}</span>
+                    <a itemprop="url" class="qodef-e-quote-url"
+                    href="https://fidalgo.qodeinteractive.com/some-fresh-recipes/"></a>
+                </div>
+                {{ blog_related limit="2" }}
+                <div class="blog-detail-inner">
+                    <div class="blog-image">
+                        <a href="">{{ image }}<img src="{{ url }}" alt="">{{ /image }}</a>
+                    </div>
+                    <div class="blog-info">
+                        <a href="#">{{ published_date format="F j, Y" }}</a>
+                        <a href="#" rel="tag">{{ tag }}{{ title }}{{ /tag }}</a>
+                    </div>
+                    <h2><a href="#"> {{ title }}</a></h2>
+                    {{ description }}
+                    {{ if button_text }} <a href="{{ button_url }}/{{ slug }}" class="read-more">{{ button_text }}</a>{{ /if }}
+                </div>
+                {{ /blog_related }}
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="blog-sidebar">
+                <div class="blog-author">
+                    <a href="#">{{ author_image }}<img src="{{ url }}" alt="author">{{ /author_image }}</a>
+                    <h4 class="widget-title">
+                        <a itemprop="url" href="javascript:;">{{ author_name }}</a>
+                    </h4>
+                    <p>{{ author_bio }}</p>
+
+                </div>
+                <div class="blog-category">
+                    <h4 class="widget-title">categories</h4>
+                    <ul>
+                       {{ taxonomy:blog_category }}
+                       <li><a href="/blog/category/{{slug}}">{{ title }}</a></li>
+                       {{ /taxonomy:blog_category }}
+                       
+                   </ul>
+               </div>
+               <div class="blog-instagram">
+                {{ setting }}
+                <h4 class="widget-title">{{ instagram_text }}</h4>
+                <ul>
+                    {{ instagram_posts }}
+                    <li>
+                        <a href="{{ url }}">{{ image }}<img src="{{ url }}" alt="instagram">{{ /image }}</a>
+                    </li>
+                    {{ /instagram_posts }}
+                </ul>
+                {{ /setting }}
+            </div>
+            <div class="blog-tag">
+                <h4 class="widget-title">Tags</h4>
+                <ul>
+                   {{ taxonomy:blog_tag }}
+                   <li><a href="/blog?tag={{slug}}">{{ title }}</a></li>
+                   {{ /taxonomy:blog_tag }}
+               </ul>
+           </div>
+       </div>
+   </div>
+</div>
+</div>
+</section>

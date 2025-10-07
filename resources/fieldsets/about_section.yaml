@@ -1,0 +1,34 @@
+title: 'About Section'
+fields:
+  -
+    handle: image
+    field:
+      type: assets
+      container: assets
+      max_files: 1
+      display: 'About Image'
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'

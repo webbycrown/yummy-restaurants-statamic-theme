@@ -1,0 +1,41 @@
+title: 'Recommendation Section'
+fields:
+  -
+    handle: image_one
+    field:
+      type: assets
+      container: assets
+      max_files: 1
+      display: 'Image one'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: section_subtitle
+    field:
+      type: text
+      display: 'Section Subtitle'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: main_link
+    field:
+      type: text
+      display: 'Read More Link'
+  -
+    handle: main_link_text
+    field:
+      type: text
+      display: 'Read More Text'
+  -
+    handle: image_two
+    field:
+      type: assets
+      container: assets
+      max_files: 1
+      display: 'Image two'

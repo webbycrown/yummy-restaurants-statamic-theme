@@ -1,0 +1,114 @@
+title: 'Connect With Us Sidebar'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: connect_with_us
+            field:
+              default: 'connect with us'
+              type: text
+              display: 'connect with us'
+          -
+            handle: find_us_title
+            field:
+              type: text
+              display: 'Find Us Title'
+              default: 'find us'
+          -
+            handle: address
+            field:
+              type: text
+              display: Address
+              default: '52, Lorem Ipsum, NY'
+          -
+            handle: map_url
+            field:
+              type: text
+              display: 'Google Map URL'
+              default: 'https://www.google.com/maps/place/487+8th+Ave,+New+York,+NY+10001,+USA'
+          -
+            handle: phone_numbers
+            field:
+              type: replicator
+              display: 'Phone Numbers'
+              sets:
+                phone_number:
+                  display: Phone
+                  fields:
+                    -
+                      handle: number
+                      field:
+                        type: text
+                        display: Number
+                        default: '+123 344 056'
+                    -
+                      handle: tel_link
+                      field:
+                        type: text
+                        display: 'Tel Link'
+                        default: 'tel:+123344056'
+          -
+            handle: contact_us_title
+            field:
+              type: text
+              display: 'Contact Us Title'
+              default: 'contact us'
+          -
+            handle: emails
+            field:
+              type: replicator
+              display: Emails
+              sets:
+                email:
+                  display: Email
+                  fields:
+                    -
+                      handle: email_address
+                      field:
+                        type: text
+                        display: Email
+                        default: reservations@example.com
+                    -
+                      handle: mailto_link
+                      field:
+                        type: text
+                        display: 'Mailto Link'
+                        default: 'mailto:reservations@example.com'
+          -
+            handle: opening_hours_title
+            field:
+              type: text
+              display: 'Opening Hours Title'
+              default: 'opening hours'
+          -
+            handle: opening_hours
+            field:
+              type: textarea
+              display: 'Opening Hours'
+              default: |-
+                Tuesday - Thursday 4pm - 11pm
+                Friday & Saturday 12pm till late
+          -
+            handle: social_links
+            field:
+              type: replicator
+              display: 'Social Links'
+              sets:
+                social:
+                  display: 'Social Link'
+                  fields:
+                    -
+                      handle: platform
+                      field:
+                        type: text
+                        display: 'Platform Name'
+                        default: Facebook
+                    -
+                      handle: url
+                      field:
+                        type: text
+                        display: URL
+                        default: 'https://www.facebook.com'

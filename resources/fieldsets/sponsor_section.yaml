@@ -1,0 +1,24 @@
+title: 'Sponsor Section'
+fields:
+  -
+    handle: sponsors
+    field:
+      type: replicator
+      display: Sponsors
+      collapse: true
+      sets:
+        sponsor_item:
+          display: Sponsor
+          fields:
+            -
+              handle: image
+              field:
+                type: assets
+                container: assets
+                max_files: 1
+                display: 'Sponsor Image'
+            -
+              handle: alt_text
+              field:
+                type: text
+                display: 'Alt Text'

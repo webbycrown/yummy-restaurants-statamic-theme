@@ -1,0 +1,69 @@
+title: Product
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: image
+            field:
+              type: assets
+              container: assets
+              max_files: 1
+              display: 'Item Image'
+              instructions: 'Upload the main image for the product'
+          -
+            handle: link
+            field:
+              type: text
+              display: 'Product Link'
+              instructions: 'Link to the product page'
+          -
+            handle: price
+            field:
+              type: text
+              display: Price
+              placeholder: $45.00
+              instructions: 'Enter the product price'
+          -
+            handle: rating
+            field:
+              type: integer
+              display: Rating
+              instructions: 'Enter rating from 0 to 5'
+              min: 1
+              max: 5
+              default: 3
+              validate:
+                - required
+          -
+            handle: add_to_cart_link
+            field:
+              type: text
+              display: 'Add to Cart Link'
+              placeholder: /cart
+              instructions: 'Link to add this product to the cart'
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Description
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

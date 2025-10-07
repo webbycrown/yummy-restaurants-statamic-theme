@@ -1,0 +1,8 @@
+title: 'Social Link'
+data:
+  social_links:
+    -
+      id: mfzctx5d
+      platform: facebook-f
+      type: new_set
+      enabled: true

@@ -1,0 +1,138 @@
+title: Footer
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: contact
+            field:
+              type: grid
+              display: Contact
+              fields:
+                -
+                  handle: address
+                  field:
+                    type: text
+                    display: Address
+                -
+                  handle: address_url
+                  field:
+                    type: text
+                    display: 'Address URL'
+                -
+                  handle: phone
+                  field:
+                    type: text
+                    display: Phone
+                -
+                  handle: email
+                  field:
+                    type: text
+                    display: Email
+          -
+            handle: contact_heading
+            field:
+              type: text
+              display: 'Contact Heading'
+          -
+            handle: branding
+            field:
+              type: grid
+              display: Branding
+              fields:
+                -
+                  handle: logo
+                  field:
+                    type: assets
+                    max_files: 1
+                    display: Logo
+                -
+                  handle: tagline
+                  field:
+                    type: textarea
+                    display: Tagline
+          -
+            handle: social_links
+            field:
+              type: replicator
+              display: 'Social Links'
+              collapse: true
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: platform
+                          field:
+                            options:
+                              -
+                                key: facebook-f
+                                value: Facebook
+                              -
+                                key: youtube
+                                value: Youtube
+                              -
+                                key: twitter
+                                value: Twitter
+                              -
+                                key: instagram
+                                value: Instagram
+                              -
+                                key: linkedin-in
+                                value: LinkedIn
+                              -
+                                key: github
+                                value: Github
+                              -
+                                key: whatsapp
+                                value: Whatsapp
+                              -
+                                key: pinterest-p
+                                value: Pinterest
+                              -
+                                key: telegram-plane
+                                value: Telegram
+                              -
+                                key: medium
+                                value: Medium
+                              -
+                                key: reddit-alien
+                                value: 'Reddit Alien'
+                            type: select
+                            display: Platform
+                        -
+                          handle: url
+                          field:
+                            type: text
+                            display: URL
+          -
+            handle: hours_heading
+            field:
+              type: text
+              display: 'Hours Heading'
+          -
+            handle: hours
+            field:
+              type: grid
+              display: Hours
+              fields:
+                -
+                  handle: day
+                  field:
+                    type: text
+                    display: Day
+                -
+                  handle: time
+                  field:
+                    type: text
+                    display: Time
+          -
+            handle: copyright
+            field:
+              type: textarea
+              display: Copyright

@@ -1,0 +1,6 @@
+title: Products
+route: '/products/{slug}'
+revisions: false
+date_behavior:
+  past: public
+  future: private

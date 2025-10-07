@@ -1,0 +1,51 @@
+ <div class="wc-breadcrumb">
+    <div class="wc-breadcrumb-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-item">
+                        <a href="/">Home</a>
+                        <i class="fa fa-angle-right"></i>
+                        <span>Category</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="news-blogs-section blog-page-news-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="news-blogs-title-text text-center">
+                    
+                </div>
+            </div>
+            
+            {{ collection:blogs as='blogs' category:contains="{ category_slug }" }}
+            
+            {{ blogs }}
+            <div class="col-12 col-md-4" data-aos="fade-down" data-aos-duration="1000">
+                <div class="news-blogs-box blog-page-news">
+                    <div class="news-blogs-img">
+                        {{ image }}<img src="{{ url }}" alt="">{{ /image }}
+                    </div>
+                    <div class="news-blogs-text">
+                        <h4><a href="/blog/{{ slug }}">{{ title }}</a></h4>
+                        <small>{{ published_date format="F j, Y" }}<span><svg width="9px" height="9px">
+                            <path fill-rule="evenodd" fill="rgb(193, 153, 119)" d="M4.670,0.008 L8.909,4.254 L4.663,8.493 L0.424,4.247 L4.670,0.008 Z" /></svg></span> 
+                            {{ category }}{{ title }}{{ if not last }}, {{ /if }}{{ /category }}
+                        </small>
+                        <p>{{ short_description }}</p>
+                        {{ if button_text }} <a href="{{ button_url }}/{{ slug }}" class="btn btn-primary">{{ button_text }}</a>{{ /if }}
+                    </div>
+                </div>
+            </div>
+            {{ /blogs }}
+
+            
+            {{ /collection:blogs }}
+            
+        </div>
+    </div>
+</section>

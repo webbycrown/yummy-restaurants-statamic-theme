@@ -1,0 +1,53 @@
+title: 'Special Food Menu Section'
+fields:
+  -
+    handle: section_subtitle
+    field:
+      type: text
+      display: 'Section Subtitle'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: left_image
+    field:
+      type: assets
+      container: assets
+      max_files: 1
+      display: 'Left Image'
+  -
+    handle: menu_items
+    field:
+      type: replicator
+      display: 'Menu Items'
+      listable: true
+      collapse: true
+      sets:
+        main:
+          display: Main
+          sets:
+            menu_item:
+              display: 'Menu Item'
+              fields:
+                -
+                  handle: name
+                  field:
+                    type: text
+                    display: 'Dish Name'
+                -
+                  handle: price
+                  field:
+                    type: text
+                    display: Price
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                -
+                  handle: link
+                  field:
+                    type: text
+                    display: 'Link URL'

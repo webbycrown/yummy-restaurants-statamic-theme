@@ -1,0 +1,45 @@
+    <section class="testimonial-slider">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6" data-aos="zoom-in" data-aos-duration="1000">
+                    <div class="testimonial-img-box">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                 {{ testimonials }}
+                                 <div class="swiper-slide">
+                                    <div class="testimonial-img">{{ image }}<img src="{{ url }}"
+                                        alt="">{{ /image }}
+                                    </div>
+                                </div>
+                                {{ /testimonials }}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="testimonial-slider-text-box">
+                        <img src="images/testimonial-shape.jpg" alt="">
+                        <div class="swiper mySwiper2">
+                            <div class="swiper-wrapper">
+                              {{ testimonials }}
+                              <div class="swiper-slide">
+                                <div class="testimonial-slider-text text-center">
+                                    <h4>{{ text }}</h4>
+                                    <h5><a href="{{ profile_link }}">{{ name }}</a></h5>
+                                    <p>{{ position }} </p>
+                                    <div class="testimonial-lain"></div>
+                                </div>
+                            </div>
+                            {{ /testimonials }}
+                        </div>
+                        <div class="slider-errows">
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

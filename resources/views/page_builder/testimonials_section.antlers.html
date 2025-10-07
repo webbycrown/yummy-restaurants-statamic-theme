@@ -1,0 +1,26 @@
+<section class="user-testimonial-section">
+        <div class="container">
+          <div class="row">
+            <div class="user-testimonial-box">
+              <img src="/assets/images/testimonial-shape.jpg" alt="">
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+
+                  {{ testimonials }}
+                  <div class="swiper-slide">
+                    <div class="user-testimonial-text text-center">
+                      <h4>{{ message }}</h4>
+                      <h3><a href="{{ link }}">{{ name }}</a></h3>
+                      <small>{{ position }}</small>
+                    </div>
+                  </div>
+                  {{ /testimonials }}
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

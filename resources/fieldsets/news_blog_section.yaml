@@ -1,0 +1,25 @@
+title: 'News Blog Section'
+fields:
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: sub_title
+    field:
+      type: text
+      display: 'Sub Title'
+  -
+    handle: collections
+    field:
+      max_items: 1
+      mode: select
+      type: collections
+      display: Collections
+  -
+    handle: limit
+    field:
+      default: '3'
+      type: integer
+      display: Limit

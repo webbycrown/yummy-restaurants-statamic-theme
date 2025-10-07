@@ -1,0 +1,48 @@
+title: 'Testimonial Slider'
+fields:
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: section_subtitle
+    field:
+      type: text
+      display: 'Section Subtitle'
+  -
+    handle: testimonials
+    field:
+      type: replicator
+      display: Testimonials
+      sets:
+        testimonial_item:
+          display: 'Testimonial Item'
+          fields:
+            -
+              handle: image
+              field:
+                type: assets
+                container: assets
+                max_files: 1
+                display: Image
+            -
+              handle: text
+              field:
+                type: textarea
+                display: 'Testimonial Text'
+            -
+              handle: name
+              field:
+                type: text
+                display: Name
+            -
+              handle: profile_link
+              field:
+                type: text
+                display: 'Profile Link'
+            -
+              handle: position
+              field:
+                type: text
+                display: 'Position / Job Title'

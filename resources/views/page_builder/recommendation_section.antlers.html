@@ -1,0 +1,35 @@
+<section class="recomandation-section">
+    <div class="container">
+        <div class="row align-items-center">
+     
+            <div class="col-12 col-md-4" data-aos="fade-down" data-aos-duration="1000">
+                <div class="recomandation-img">
+                    {{ image_one }}<img src="{{ url }}" alt="">{{ /image_one }}
+                </div>
+            </div>
+            
+            
+            <div class="col-12 col-md-4">
+                <div class="recomandation-text text-center">
+                    <h5 class="sub-title">{{ section_title }}</h5>
+                    <h2>{{ section_subtitle }}</h2>
+                    <div class="text-shape">
+                        <svg width="64px" height="1px"> <path fill-rule="evenodd" fill="rgb(193, 153, 119)" d="M-0.000,0.999 L-0.000,-0.000 L128.000,-0.000 L128.000,0.999 L-0.000,0.999 Z" /> </svg>
+                        <svg width="25.5px" height="25.5px"> <path fill-rule="evenodd" fill="rgb(193, 153, 119)" d="M5.506,12.383 L12.615,5.493 L19.506,12.601 L12.397,19.492 L5.506,12.383 Z" /> <path fill-rule="evenodd" stroke="rgb(193, 153, 119)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M0.511,12.301 L12.697,0.488 L24.511,12.674 L12.324,24.487 L0.511,12.301 Z" /></svg>
+                        <svg width="64px" height="1px"><path fill-rule="evenodd" fill="rgb(193, 153, 119)"d="M-0.000,0.999 L-0.000,-0.000 L128.000,-0.000 L128.000,0.999 L-0.000,0.999 Z" /></svg>
+                    </div>
+                    <p>{{ description }}</p>
+                    {{ if main_link_text }}<a href="{{ main_link }}" class="btn btn-primary">{{ main_link_text }}</a>{{ /if }}
+                </div>
+            </div>
+            
+           
+            <div class="col-12 col-md-4" data-aos="fade-down" data-aos-duration="1000">
+                <div class="recomandation-img">
+                    {{ image_two }}<img src="{{ url }}" alt="">{{ /image_two }}
+                </div>
+            </div>
+          
+        </div>
+    </div>
+</section>

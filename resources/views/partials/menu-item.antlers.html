@@ -1,0 +1,13 @@
+{{ if {get:type} == "popup" }}
+<div class="menu_html">
+    <div class="menu-popup-box">
+        {{ image }}<img src="{{ url }}" alt=""> {{ /image }}
+        <div class="menu-item-title">
+            <h3>{{ title }}</h3>
+            <h4>{{ price }}</h4>
+        </div>
+
+        <p>{{ description }}</p>
+    </div>
+</div>
+{{ /if }}

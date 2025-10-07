@@ -1,0 +1,103 @@
+title: 'all page builder'
+fields:
+  -
+    handle: page_builder
+    field:
+      type: replicator
+      display: 'Page Builder'
+      listable: true
+      collapse: accordion
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  import: back_button_section
+            hero_section:
+              display: 'Hero Section'
+              fields:
+                -
+                  import: hero_section
+            contact_section:
+              display: 'Contact Section'
+              fields:
+                -
+                  import: contact_section
+            menu_sections:
+              display: 'Menu Sections'
+              fields:
+                -
+                  import: menu_sections
+            chef_team_section:
+              display: 'Chef Team Section'
+              fields:
+                -
+                  import: chef_team_section
+            sponsor_section:
+              display: 'Sponsor Section'
+              fields:
+                -
+                  import: sponsor_section
+            testimonials_section:
+              display: 'Testimonials Section'
+              fields:
+                -
+                  import: testimonials_section
+            portfolio_section:
+              display: 'Portfolio Section'
+              fields:
+                -
+                  import: portfolio_section
+            blog_section:
+              display: 'Blog Section'
+              fields:
+                -
+                  import: blog_section
+            back_button_section:
+              display: 'Back Button Section'
+              fields:
+                -
+                  import: back_button_section
+            feature_section:
+              display: 'Feature Section'
+              fields:
+                -
+                  import: feature_section
+            slider_section:
+              display: 'Slider Section'
+              fields:
+                -
+                  import: slider_section
+            about_section:
+              display: 'About Section'
+              fields:
+                -
+                  import: about_section
+            welcome_section:
+              display: 'Welcome Section'
+              fields:
+                -
+                  import: welcome_section
+            testimonial_slider:
+              display: 'Testimonial Slider'
+              fields:
+                -
+                  import: testimonial_slider
+            recommendation_section:
+              display: 'Recommendation Section'
+              fields:
+                -
+                  import: recommendation_section
+            special_food_menu_section:
+              display: 'Special Food Menu Section'
+              fields:
+                -
+                  import: special_food_menu_section
+            news_blog_section:
+              display: 'News Blog Section'
+              fields:
+                -
+                  import: news_blog_section

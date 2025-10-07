@@ -1,0 +1,112 @@
+title: Blog
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Title
+          -
+            handle: image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: image
+          -
+            handle: short_description
+            field:
+              type: textarea
+              display: 'Short Description'
+          -
+            handle: description
+            field:
+              remove_empty_nodes: false
+              type: bard
+              display: Description
+          -
+            handle: quote
+            field:
+              type: text
+              display: Quote
+          -
+            handle: quote_author
+            field:
+              type: text
+              display: 'Quote Author'
+          -
+            handle: button_url
+            field:
+              default: /blog
+              type: text
+              display: 'Button URL'
+          -
+            handle: button_text
+            field:
+              default: 'Read More'
+              type: text
+              display: 'Button Text'
+          -
+            handle: category
+            field:
+              mode: select
+              taxonomies:
+                - blog_category
+              type: terms
+              display: Category
+          -
+            handle: tag
+            field:
+              mode: select
+              taxonomies:
+                - blog_tag
+              type: terms
+              display: Tag
+          -
+            handle: author_name
+            field:
+              type: text
+              display: 'Author Name'
+          -
+            handle: author_image
+            field:
+              type: assets
+              container: assets
+              max_files: 1
+              display: 'Author Image'
+          -
+            handle: author_bio
+            field:
+              type: textarea
+              display: 'Author Bio'
+          -
+            handle: blog_related
+            field:
+              mode: select
+              collections:
+                - blogs
+              type: entries
+              display: 'Blog Related'
+          -
+            handle: published_date
+            field:
+              type: date
+              display: 'Published Date'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

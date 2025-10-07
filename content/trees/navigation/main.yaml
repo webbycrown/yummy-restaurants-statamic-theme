@@ -1,0 +1,38 @@
+tree:
+  -
+    id: feac4a3a-a16f-4a3f-a898-e6fc960e21fb
+    title: Home
+    url: /
+  -
+    id: 071222cb-25e5-439d-9fb5-5cf71ba1b7dd
+    title: Pages
+    url: 'javascript:;'
+    children:
+      -
+        id: e4b97095-76db-4560-943e-1f8b2f42d0fb
+        title: about
+        url: /about
+      -
+        id: 49eeca33-0934-4cea-9190-618d493d6313
+        title: contact
+        url: /contact
+      -
+        id: fb04bf02-c1dc-45ca-96e4-52239237fd9f
+        title: menu
+        url: /menu
+      -
+        id: b4715729-0be7-46a8-94f7-55bea885785f
+        title: chef
+        url: /chef
+      -
+        id: 1baa24e3-e55f-4cf0-9291-f3553f91d829
+        title: 'Blog Details'
+        url: /blog/asparagus-with-lemon-and-taragon-hollandaise
+  -
+    id: dc2f7b17-c81c-4ff2-91b3-8c8f4abf4aae
+    title: Portfolio
+    url: /portfolio
+  -
+    id: e5cf6cd2-9299-4d9e-ac92-f348235c307b
+    title: blog
+    url: /blog

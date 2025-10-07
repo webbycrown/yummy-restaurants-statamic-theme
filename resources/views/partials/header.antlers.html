@@ -1,0 +1,104 @@
+<div class="menu side-menu">
+    <div class="sidebar-menu">
+        {{ nav:main }}
+        <ul class="side-menu-mobile">
+            {{ if children }}
+            <li class="side-menu-check">
+                <a href="javascript:;" class="all-dropdown">
+                    {{ title }} <span><i class="fas fa-angle-down"></i></span>
+                </a>
+                <ul class="dropdown-menu">
+                    {{ children }}
+                    <li><a class="dropdown-item" href="{{ url }}">{{ title }}</a></li>
+                    {{ /children }}
+                </ul>
+            </li>
+            {{ else }}
+            <li><a href="{{ url }}">{{ title }}</a></li>
+            {{ /if }}
+        </ul>
+        {{ /nav:main }}
+        <div class="sidebar_core">
+            {{ sidebar }}
+            <h2>{{ connect_with_us }}</h2>
+            <h3>{{ find_us_title }}</h3>
+            <div class="widget_block"><a
+                href="{{ map_url }}"
+                target="_blank" rel="noopener">{{ address }}</a><br>
+                {{ phone_numbers }}<a href="{{ tel_link }}">{{ number }}</a> {{ if not last }}, {{ /if }} {{ /phone_numbers }} 
+            </div>
+            <h3>{{ contact_us_title }}</h3>
+            <div class="widget_block">
+                {{ emails }}<a href="{{ mailto_link }}">{{ email_address }}</a>{{ if not last }},<br>{{ /if }}{{ /emails }}
+            </div>
+            <h3>{{ opening_hours_title }}</h3>
+            <div class="widget_block">
+                <p>{{ opening_hours|raw }}</p>
+            </div>
+            <div class="social-links-group">
+                {{ social_links }}
+                <span class="link-holder">
+                    <a itemprop="url" href="{{ url }}" target="_blank">{{ platform }}</a>
+                </span>
+                {{ /social_links }}
+            </div>
+            {{ /sidebar }}
+        </div>
+    </div>
+</div>
+<div class="menu-close-botton">
+    <div class="sub-menu-close-botton">
+        <a class="close" href="javascript:;">
+            <div class="close-line"></div>
+            <div class="close-line"></div>
+        </a>
+    </div>
+</div>
+<!-- end-side-menu-->
+
+<div class="transparent">
+
+    <!-- start-header -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="sub-header">
+                        <div class="logo-img">
+                            <a href="/">
+                                 {{ setting }}<img src="{{ logo }}{{url}}{{ /logo }}" alt="">{{ /setting }}
+                            </a>
+                        </div>
+                        <div class="menubar">
+
+                            <ul class="menu">
+                                {{ nav:main }}
+                                {{ if children }}
+                                <li class="header-drop">
+                                    <a href="javascript:;" class="all-dropdown">
+                                        {{ title }} <span><i class="fas fa-angle-down"></i></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        {{ children }}
+                                        <li><a class="dropdown-item" href="{{ url }}">{{ title }}</a></li>
+                                        {{ /children }}
+                                    </ul>
+                                </li>
+                                {{ else }}
+                                <li><a href="{{ url }}" class="{{ if is_current }}active{{ /if }}">{{ title }}</a></li>
+                                {{ /if }}
+                                {{ /nav:main }}
+                            </ul>
+                        </div>
+                        <div class="toggle-menu-button">
+                            <a href="javascript:;">
+                                <div class="menu-lain"></div>
+                                <div class="menu-lain"></div>
+                                <div class="menu-lain"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>

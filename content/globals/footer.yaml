@@ -1,0 +1,58 @@
+title: Footer
+data:
+  contact:
+    -
+      id: mfxt5u8z
+      address: '52, Lorem Ipsum, 526952'
+      address_url: 'https://www.google.com/maps/search/restaurants/@21.2354154,72.8294316,14z/data=!3m1!4b1?entry=ttu'
+      phone: '+123 1236 113'
+      email: Restaurant@gmail.com
+  contact_heading: Contact
+  branding:
+    -
+      id: mfxt5vhh
+      logo: images/footer-logo.png
+      tagline: 'Whisper to us about your feelings, and we will prepare what you need now.'
+  social_links:
+    -
+      id: mfzd207y
+      platform: facebook-f
+      url: 'https://www.facebook.com/'
+      type: new_set
+      enabled: true
+    -
+      id: mfzd2gti
+      platform: twitter
+      url: 'https://x.com/?lang=en'
+      type: new_set
+      enabled: true
+    -
+      id: mfzd31eu
+      platform: instagram
+      url: 'https://www.instagram.com/'
+      type: new_set
+      enabled: true
+    -
+      id: mfzd3n6t
+      platform: pinterest-p
+      url: 'https://www.pinterest.com/'
+      type: new_set
+      enabled: true
+  hours_heading: 'Reastaurant Hour'
+  hours:
+    -
+      id: mfxt5zu3
+      day: 'Mon – Fri:'
+      time: '7.00am – 6.00pm'
+    -
+      id: mfxt8cbm
+      day: 'Sat:'
+      time: '7.00am – 6.00pm'
+    -
+      id: mfxt8m2q
+      day: 'Sun:'
+      time: '8.00am – 6.00pm'
+  copyright: |-
+    Copyrights © 2025 <a href="/">Restaurant</a>. Designed by <a
+                                        href="https://www.webbycrown.com/" class="theme-color"
+                                        target="_blank">Webbycrown</a>
