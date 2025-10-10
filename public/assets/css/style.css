@@ -2401,6 +2401,20 @@ span {
     position: relative;
 }
 
+.book-table-section #form-response {
+    border: 1px solid rgb(193 153 119);
+    background-color: #423224;
+    box-shadow: 0px 0px 2px #c19977;
+    color: #c19977 ! IMPORTANT;
+    text-shadow: 2px 1px #00040a;
+    transition: 0.5s;
+    cursor: pointer;
+    padding: 8px 10px;
+    font-size: 12px;
+    margin: 0 30px;
+}
+
+
 .book-table {
     background: #12181c;
     padding: 50px 0;
@@ -3127,6 +3141,9 @@ a.popup-youtube.show-video:hover {
 .det-contact-text .email, .det-contact-text .name {
     height: 55px;
     margin-bottom: 33px;
+}
+form#contact-form #form-response {
+    padding: 0;
 }
 
 .form-select,

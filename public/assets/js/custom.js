@@ -117,12 +117,12 @@ $(document).ready(function () {
 
                 $('.field-error.text-danger').text('');
                 if (response.success) {
+                    $messages.removeClass('d-none');
                     $messages.text("Your table has been successfully booked!").css('color', '#C69247').fadeIn();
 
-                    setTimeout(() => {
-                        $form[0].reset();
-                        $messages.html('');
-                    }, 1500);
+                    
+                    $form[0].reset();
+                    
                 }
             },
             error: function (response) {
@@ -139,70 +139,101 @@ $(document).ready(function () {
         });
     });
 
+    var allDays = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 
+    // Convert hours into schedule format
+    var schedule = hours.map(h => {
+        var days = [];
+        var dayStr = h.day.replace(':','').trim(); // remove colon
 
-    var today = new Date();
-    today.setHours(0,0,0,0);
-
-    $('#datepickers').datepicker({
-        dateFormat: 'dd/mm/yy',
-        minDate: today,
-        onSelect: function() {
-            updateTimepicker();
-        }
-    });
-    if ($('.book-table-section').length > 0) {
-
-        function updateTimepicker() {
-            var selectedDate = $('#datepickers').datepicker('getDate');
-            var now = new Date();
-            var minTime = '07:00am';
-            var maxTime = '06:00pm';
-
-            if (selectedDate) {
-                $('#timepickers').timepicker('destroy');
-                selectedDate.setHours(0,0,0,0);
-                var todayCheck = new Date();
-                todayCheck.setHours(0,0,0,0);
-            // If selected date is today, set minTime to current time
-                if (selectedDate.getTime() === todayCheck.getTime()) {
-                    console.log("Selected date is today");
-                    var hours = now.getHours();
-                    var minutes = Math.ceil(now.getMinutes() / 15) * 15;
-                    if (minutes === 60) {
-                        hours += 1;
-                        minutes = 0;
-                    }
-
-                // Prevent minTime from exceeding 6:00pm
-                    if (hours >= 18) {
-                        minTime = '06:00pm';
-                    } else {
-                        minTime = ((hours > 12 ? hours-12 : hours) || 12) + ':' +
-                        (minutes < 10 ? '0'+minutes : minutes) +
-                        (hours >= 12 ? 'pm' : 'am');
-                    }
-                }
+        if(dayStr.includes('–')) {
+            // Handle ranges like "Mon – Fri"
+            var parts = dayStr.split('–').map(p => p.trim());
+            var startIndex = allDays.indexOf(parts[0]);
+            var endIndex = allDays.indexOf(parts[1]);
+            for(var i = startIndex; i <= endIndex; i++){
+                days.push(allDays[i]);
             }
-
-        // Initialize timepicker
-            $('#timepickers').timepicker({
-                timeFormat: 'h:mm p',
-                interval: 15,
-                minTime: minTime,
-                maxTime: maxTime,
-                defaultTime: minTime,
-                dynamic: false,
-                dropdown: true,
-                scrollbar: true,
-                showSecond: false
-            });
+        } else {
+            // Single day like "Sat" or "Sun"
+            days.push(dayStr);
         }
 
-    // Initialize timepicker on page load
-        updateTimepicker();
+        // Replace '.' with ':' in time for proper format
+        var time = h.time.replace(/\./g, ':');
+
+        return { days: days, time: time };
+    });
+
+function updateTimepicker() {
+    var selectedDate = $('#datepickers').datepicker('getDate');
+    var now = new Date();
+
+    if (!selectedDate) return;
+
+    $('#timepickers').timepicker('destroy');
+
+    var dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    var selectedDay = dayNames[selectedDate.getDay()];
+
+    var daySchedule = schedule.find(s => s.days.includes(selectedDay));
+    var minTime = '07:00am';
+    var maxTime = '06:00pm';
+
+    if (daySchedule) {
+        var times = daySchedule.time.split('–').map(t => t.trim());
+        minTime = times[0];
+        maxTime = times[1];
     }
 
+    var todayCheck = new Date();
+    todayCheck.setHours(0,0,0,0);
+    selectedDate.setHours(0,0,0,0);
+
+    if (selectedDate.getTime() === todayCheck.getTime()) {
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+
+        // Round minutes up to next 30-minute slot
+        if (minutes > 0 && minutes <= 30) minutes = 30;
+        else if (minutes > 30) { minutes = 0; hours += 1; }
+
+        // Convert to 12-hour format
+        var timeStr = ((hours > 12 ? hours - 12 : (hours === 0 ? 12 : hours))) + ':' +
+                      (minutes < 10 ? '0' + minutes : minutes) +
+                      (hours >= 12 ? 'pm' : 'am');
+
+        // Ensure minTime does not exceed maxTime
+        var maxHour = parseInt(maxTime.split(':')[0], 10) + (maxTime.includes('pm') && parseInt(maxTime.split(':')[0], 10) < 12 ? 12 : 0);
+        if (hours < maxHour || (hours === maxHour && minutes === 0)) {
+            minTime = timeStr;
+        } else {
+            minTime = maxTime;
+        }
+    }
+
+    $('#timepickers').timepicker({
+        timeFormat: 'h:mm p',
+        interval: 30,
+        minTime: minTime,
+        maxTime: maxTime,
+        defaultTime: minTime,
+        dynamic: false,
+        dropdown: true,
+        scrollbar: true,
+        showSecond: false
+    });
+}
+
+// Initialize datepicker
+var today = new Date();
+$('#datepickers').datepicker({
+    dateFormat: 'dd/mm/yy',
+    minDate: today,
+    onSelect: function() {
+        updateTimepicker();
+    }
+});
 
    function updateCartDisplay() {
         let cart = JSON.parse(sessionStorage.getItem('cart') || '[]');

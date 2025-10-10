@@ -16,14 +16,8 @@
            
             <!-- start footer -->
             {{ if response_code != 404 }}
-            
-{{ if segment_1 == "about" }}
-    {{  extra_class = "about-page-book-table" }}
-{{ else }}
-    {{  extra_class = "" }}
-{{ /if }}
             <!-- start book-table section -->
-            <section class="book-table-section {{ extra_class }}">
+            <section class="book-table-section">
                 <div class="container">
                     <div class="book-table">
                         <div class="row">
@@ -39,15 +33,25 @@
                                 {{ csrf }}
                                 <div class="select-table">
                                     {{ fields }}
-                                    <div class="{{ handle == 'name' ? 'name-box' : (handle == 'persons' ? 'Person-box' : (handle == 'book_date' ? 'date-box' : (handle == 'time' ? 'time-box' : handle ) ) ) }}">
+                                    <div class="{{ handle == 'name' ? 'name-box' : (handle == 'persons' ? 'Person-box' : (handle == 'book_date' ? 'date-box' : (handle == 'time' ? 'time-box' : name-box ) ) ) }} name-box">
                                         <div class="input-group">
                                             {{ if type == "textarea" }}
                                             <textarea class="form-control" name="{{ handle }}" placeholder="{{ display }}"></textarea>
                                             {{ elseif type == "select" }}
-                                            <select class="form-select" name="{{ handle }}">
-                                                {{ options }}
-                                                <option value="{{ value }}">{{ value }}</option>
-                                                {{ /options }}
+                                            <select class="form-select" name="{{ handle }}" onautocomplete="">
+                                                {{ if  handle == 'persons'}}
+                                                    {{ loop from="1" to="10" }}
+                                                    <option value="{{ value }}">
+                                                        {{ value }} Person{{ if value > 1 }}s{{ /if }}
+                                                    </option>
+                                                    {{ /loop }}
+                                                    <option value="11">10 plus persons</option>
+
+                                                {{ else }}
+                                                    {{ options }}
+                                                    <option value="{{ value }}">{{ value }}</option>
+                                                    {{ /options }}
+                                                {{ /if }}
                                             </select>
                                             {{ else }}
                                             <input type="{{ type }}" id="{{ handle == 'time' ? 'timepickers' : (handle == 'book_date' ? 'datepickers':handle) }}" class="form-control" name="{{ handle }}" placeholder="{{ display }}">
@@ -57,11 +61,11 @@
                                     </div>
                                     {{ /fields }}
                                 </div>
+                                <div id="form-response" class="mt-2 d-none"></div>
                                 <div class="book-botton text-center mt-3">
                                     <button type="submit" class="btn btn-primary">{{ setting }} {{ booking_button }} {{ /setting }}  </button>
                                 </div>
 
-                                <div id="form-response" class="mt-2"></div>
 
                                 {{ /form:book_a_table }}
                             </div>

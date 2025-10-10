@@ -12,6 +12,14 @@ tabs:
               validate:
                 - required
           -
+            handle: number
+            field:
+              type: text
+              display: Number
+              validate:
+                - required
+                - 'regex:/^\+?[0-9\s\-]{7,15}$/'
+          -
             handle: persons
             field:
               options:
