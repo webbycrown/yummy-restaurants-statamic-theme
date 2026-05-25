@@ -1,9 +1,13 @@
 {
     "name": "webbycrown/yummy-restaurants-statamic-theme",
+    "type": "statamic-starter-kit",
+    "description": "A Yummy restaurants starter kit for information sites.",
+    "require": {
+        "statamic/cms": "*"
+    },
     "extra": {
         "statamic": {
-            "name": "Yummy Restaurants Statamic Theme",
-            "description": "A Yummy restaurants starter kit for information sites."
+            "starter-kit": true
         }
     }
 }
